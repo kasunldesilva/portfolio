@@ -1,0 +1,91 @@
+.mobile-menu {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+    position: fixed;
+    display: none;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    z-index: 999 !important;
+    box-shadow: 0px 20px 80px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    transform: translateX(-100vw);
+}
+
+.mobile-menu-container {
+    width: 60vw;
+    height: 100vh;
+    background-color: #000; /* Black background */
+    padding: 2rem;
+    color: #fff; /* White text */
+}
+
+.mobile-menu.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mobile-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style: none;
+    margin-left: -2rem;
+}
+
+.menu-item {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff; /* White text */
+    position: relative;
+    cursor: pointer;
+}
+
+.menu-item::before {
+    content: "";
+    width: 2rem;
+    height: 0.2rem;
+    background: red; /* Red hover line */
+    border-radius: 0.5rem;
+    position: absolute;
+    bottom: -0.5rem;
+    opacity: 0;
+    transform: translateX(-1.5rem);
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover::before {
+    width: 100%;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.contact-btn {
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000; /* Black text */
+    background: #fff; /* White button */
+    padding: 0.6rem 2rem;
+    border: none;
+    outline: 1.5px solid transparent;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    color: #a993fe;
+    background: #000;
+    outline: 1.5px solid #a993fe;
+}
+
+@media (max-width: 769px) {
+    .mobile-menu {
+        display: block;
+    }
+}
